@@ -1,7 +1,7 @@
 
 let display;
 let input = [2,"+",5];
-
+// maybe input is itself + the next input? like storedValue1 = input + buttonInput ???
 
 
 function add(a, b){
@@ -47,6 +47,7 @@ console.log(input);
 console.log(test);
 
 
-//Thoughts
-// how to insert stored value to beginning of array? 
-// how to combine multiple buttons into 1 item?
+// ----- Thoughts -----
+// how to insert stored display value to beginning of array? 
+// how to combine multiple buttons into 1 array item? - What if pressing an operator button takes all the prior button presses and concatenates them and dumps them into a variable or slot in the array? 
+    //Maybe it checks to see if we entered anything to determine if it should go grab the previous calculation from the display...?
