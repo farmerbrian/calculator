@@ -25,35 +25,16 @@ buttons.forEach((button) => {
         input = '';
         operator = '';  
     } else if (button.name == '+' || button.name == '-' || button.name == 'x' || button.name == '/') {
-        //operator = button.name;
         if (operator == '') {
             operator = button.name;
             if (display == '') {
             display = input;
             input = '';
-            //console.log('i am in this first if');
-            //console.log(operator);
             } 
-            // else {
-            //     if (operator == '+') {
-            //         add(Number(display), Number(input));
-            //     } else if (operator == '-') {
-            //         subtract(Number(display), Number(input));
-            //     } else if (operator == '/') {
-            //         divide(Number(display), Number(input));
-            //     } else if (operator == 'x') {
-            //         multiply(Number(display), Number(input));
-            //     }
-            //     input = '';
-            //     console.log('why am i here');
-            //     console.log(display);
-                
-            // } 
-        } else {
+         } else {
             if (display == '') {
                 display = input;
                 operator = button.name;
-                //console.log('first operator');
                 input = '';
             } else {
                 if (operator == '+') {
@@ -67,14 +48,11 @@ buttons.forEach((button) => {
                 }
                 input = '';
                 operator = button.name;
-                //console.log('I am down in this else statement');
             }
         }
     } else if (input == '') {
         input = button.name;
-        //console.log('step one maybe');
     } else {input=input + button.name;
-    //console.log('step two maybe');
     }
 
     // Now to update the LCD on the calculator with our numbers
@@ -115,20 +93,4 @@ function divide(a, b){
   
     return display;   
 };
-
-// function operate(input) {
-//     if (input.includes("+")) {
-//         display = add(input[0], input[2]);
-//         return display;
-//     } else if (input.includes("-")) {
-//         display = subtract(input[0], input[2]);
-//         return display;
-//     } else if (input.includes("*")) {
-//         display = multiply(input[0], input[2]);
-//         return display;
-//     } else if (input.includes("/")) {
-//         display = divide(input[0], input[2]);
-//         return display;
-//     }
-// };
 
