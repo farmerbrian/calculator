@@ -1,6 +1,6 @@
 
 let display;
-let input = [2,"+",5];
+let input = [2,"+",6];
 // maybe input is itself + the next input? like storedValue1 = input + buttonInput ???
 
 
@@ -45,6 +45,10 @@ let test = operate(input)
 console.log(input);
 
 console.log(test);
+
+
+document.getElementById("total").innerHTML = display;
+document.getElementById("input").innerHTML = input.join('');
 
 
 // ----- Thoughts -----
