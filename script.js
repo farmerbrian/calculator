@@ -1,7 +1,49 @@
 
-let display;
-let input = [2,"+",6];
+let display = '';
+//let input = [2,"+",6];
+let input = '';
+let operator;
+
 // maybe input is itself + the next input? like storedValue1 = input + buttonInput ???
+
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+  // and for each one we add a 'click' listener
+  button.addEventListener('click', () => {
+    if (button.name == 'clr') {
+        input = '';
+        display = '';
+        operator = '';
+    } else if (button.name == '+' || button.name == '-' || button.name == 'x' || button.name == '/') {
+        operator = button.name;
+        if (display == '') {
+        display = input;
+        input = '';
+        }
+    } else if (button.name == '=') {
+        if (operator == '+') {
+            add(Number(display), Number(input));
+        } else if (operator == '-') {
+            subtract(Number(display), Number(input));
+        } else if (operator == '/') {
+            divide(Number(display), Number(input));
+        } else if (operator == 'x') {
+            multiply(Number(display), Number(input));
+        }
+        input = '';
+        operator = '';
+
+    } else if (input == '') {
+        input = button.name;
+    } else {input=input + button.name;}
+
+    document.getElementById("input").innerHTML = input;
+    if (operator == undefined) {
+        document.getElementById("total").innerHTML = display;
+    } else {document.getElementById("total").innerHTML = display+operator;}
+    
+  });
+});
 
 
 function add(a, b){
@@ -40,15 +82,15 @@ function operate(input) {
     }
 };
 
-let test = operate(input)
+//let test = operate(input)
 
-console.log(input);
+//console.log(input);
 
-console.log(test);
+//console.log(test);
 
 
-document.getElementById("total").innerHTML = display;
-document.getElementById("input").innerHTML = input.join('');
+//document.getElementById("total").innerHTML = display;
+//document.getElementById("input").innerHTML = input.join('');
 
 
 // ----- Thoughts -----
